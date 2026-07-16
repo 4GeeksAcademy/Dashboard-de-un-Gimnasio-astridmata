@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Gimnasio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes grow {
+      from {
+        transform: scaleY(0.2);
+      }
+      to {
+        transform: scaleY(1);
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col [font-family:'Space_Grotesk',Trebuchet_MS,sans-serif] text-[#1b1e24] bg-[radial-gradient(circle_at_10%_20%,rgba(36,161,124,0.12),transparent_42%),radial-gradient(circle_at_90%_10%,rgba(245,183,67,0.18),transparent_40%),linear-gradient(180deg,#fffdf8_0%,#f8f6ef_100%)]">
+  <header class="px-8 pt-6 pb-2 animate-[rise_500ms_ease] max-sm:px-4 max-sm:pt-4">
+    <div class="flex items-center justify-between gap-4 max-sm:flex-col max-sm:items-start">
+      <h1 class="text-[clamp(1.4rem,3vw,2rem)] tracking-[0.03em] font-bold">Dashboard Iron Pulse Gym</h1>
+      <p class="text-[#636c77] text-[0.95rem]">Resumen diario de tu gimnasio</p>
+    </div>
+  </header>
+
+  <nav class="sticky top-0 z-40 mx-8 mt-2 mb-5 rounded-[14px] shadow-[0_10px_30px_rgba(27,30,36,0.08)] bg-gradient-to-r from-[#176b58] to-[#114f42] animate-[rise_700ms_ease] max-sm:mx-4">
+    <div class="flex items-center justify-between p-3 flex-wrap gap-3 max-sm:p-[0.7rem]">
+      <ul class="list-none flex gap-[0.6rem] flex-wrap">
+        <li><a href="#" class="inline-block no-underline text-[#f4fff9] px-3 py-[0.45rem] rounded-full font-medium transition hover:bg-white/20 hover:-translate-y-px">Inicio</a></li>
+        <li><a href="#" class="inline-block no-underline text-[#f4fff9] px-3 py-[0.45rem] rounded-full font-medium transition hover:bg-white/20 hover:-translate-y-px">Miembros</a></li>
+        <li><a href="#" class="inline-block no-underline text-[#f4fff9] px-3 py-[0.45rem] rounded-full font-medium transition hover:bg-white/20 hover:-translate-y-px">Clases</a></li>
+        <li><a href="#" class="inline-block no-underline text-[#f4fff9] px-3 py-[0.45rem] rounded-full font-medium transition hover:bg-white/20 hover:-translate-y-px">Entrenadores</a></li>
+        <li><a href="#" class="inline-block no-underline text-[#f4fff9] px-3 py-[0.45rem] rounded-full font-medium transition hover:bg-white/20 hover:-translate-y-px">Pagos</a></li>
+      </ul>
+      <span class="border border-white/45 text-[#f4fff9] px-3 py-[0.4rem] rounded-full text-[0.9rem] whitespace-nowrap">Abierto: 6:00 - 22:00</span>
+    </div>
+  </nav>
+
+  <main class="w-[min(1120px,94%)] mx-auto grid grid-cols-12 gap-4 animate-[rise_900ms_ease] flex-1">
+    <section class="col-span-12 md:col-span-6 lg:col-span-3 bg-[#fff9ed] border border-black/5 rounded-[14px] shadow-[0_10px_30px_rgba(27,30,36,0.08)] p-4">
+      <h3 class="text-[#636c77] text-[0.9rem] mb-[0.55rem] font-medium">Miembros Activos</h3>
+      <p class="text-[1.7rem] font-bold">428</p>
+      <small class="mt-[0.35rem] text-[#176b58] block">+16 esta semana</small>
+    </section>
+
+    <section class="col-span-12 md:col-span-6 lg:col-span-3 bg-[#fff9ed] border border-black/5 rounded-[14px] shadow-[0_10px_30px_rgba(27,30,36,0.08)] p-4">
+      <h3 class="text-[#636c77] text-[0.9rem] mb-[0.55rem] font-medium">Asistencia Hoy</h3>
+      <p class="text-[1.7rem] font-bold">187</p>
+      <small class="mt-[0.35rem] text-[#176b58] block">65% del aforo</small>
+    </section>
+
+    <section class="col-span-12 md:col-span-6 lg:col-span-3 bg-[#fff9ed] border border-black/5 rounded-[14px] shadow-[0_10px_30px_rgba(27,30,36,0.08)] p-4">
+      <h3 class="text-[#636c77] text-[0.9rem] mb-[0.55rem] font-medium">Nuevas Altas</h3>
+      <p class="text-[1.7rem] font-bold">12</p>
+      <small class="mt-[0.35rem] text-[#176b58] block">+8% vs ayer</small>
+    </section>
+
+    <section class="col-span-12 md:col-span-6 lg:col-span-3 bg-[#fff9ed] border border-black/5 rounded-[14px] shadow-[0_10px_30px_rgba(27,30,36,0.08)] p-4">
+      <h3 class="text-[#636c77] text-[0.9rem] mb-[0.55rem] font-medium">Alertas de Pago</h3>
+      <p class="text-[1.7rem] font-bold text-[#d94343]">9</p>
+      <small class="mt-[0.35rem] text-[#176b58] block">Revisar membresias vencidas</small>
+    </section>
+
+    <section class="col-span-12 lg:col-span-8 bg-[#fff9ed] border border-black/5 rounded-[14px] shadow-[0_10px_30px_rgba(27,30,36,0.08)] p-4">
+      <h2 class="text-[1.25rem] font-semibold">Asistencia por Dia</h2>
+      <div class="mt-4 flex items-end gap-[0.6rem] min-h-[180px]" aria-label="Grafico de barras de asistencia semanal">
+        <div class="flex-1 rounded-t-[10px] rounded-b-[4px] bg-gradient-to-b from-[#24a17c] to-[#126651] h-[55%] animate-[grow_800ms_ease_both] origin-bottom"></div>
+        <div class="flex-1 rounded-t-[10px] rounded-b-[4px] bg-gradient-to-b from-[#24a17c] to-[#126651] h-[68%] animate-[grow_800ms_ease_both] origin-bottom"></div>
+        <div class="flex-1 rounded-t-[10px] rounded-b-[4px] bg-gradient-to-b from-[#24a17c] to-[#126651] h-[72%] animate-[grow_800ms_ease_both] origin-bottom"></div>
+        <div class="flex-1 rounded-t-[10px] rounded-b-[4px] bg-gradient-to-b from-[#24a17c] to-[#126651] h-[64%] animate-[grow_800ms_ease_both] origin-bottom"></div>
+        <div class="flex-1 rounded-t-[10px] rounded-b-[4px] bg-gradient-to-b from-[#24a17c] to-[#126651] h-[88%] animate-[grow_800ms_ease_both] origin-bottom"></div>
+        <div class="flex-1 rounded-t-[10px] rounded-b-[4px] bg-gradient-to-b from-[#24a17c] to-[#126651] h-[76%] animate-[grow_800ms_ease_both] origin-bottom"></div>
+        <div class="flex-1 rounded-t-[10px] rounded-b-[4px] bg-gradient-to-b from-[#24a17c] to-[#126651] h-[62%] animate-[grow_800ms_ease_both] origin-bottom"></div>
+      </div>
+    </section>
+
+    <aside class="col-span-12 lg:col-span-4 bg-[#fff9ed] border border-black/5 rounded-[14px] shadow-[0_10px_30px_rgba(27,30,36,0.08)] p-4">
+      <h2 class="text-[1.25rem] font-semibold">Proximas Clases</h2>
+      <ul class="list-none mt-4 grid gap-[0.65rem]">
+        <li class="flex justify-between gap-[0.6rem] text-[#1b1e24] bg-white border border-black/10 rounded-[10px] px-[0.7rem] py-[0.55rem]"><span>Funcional HIIT</span><span>08:30</span></li>
+        <li class="flex justify-between gap-[0.6rem] text-[#1b1e24] bg-white border border-black/10 rounded-[10px] px-[0.7rem] py-[0.55rem]"><span>Spinning Pro</span><span>10:00</span></li>
+        <li class="flex justify-between gap-[0.6rem] text-[#1b1e24] bg-white border border-black/10 rounded-[10px] px-[0.7rem] py-[0.55rem]"><span>Fuerza Total</span><span>17:30</span></li>
+        <li class="flex justify-between gap-[0.6rem] text-[#1b1e24] bg-white border border-black/10 rounded-[10px] px-[0.7rem] py-[0.55rem]"><span>Yoga Recovery</span><span>19:00</span></li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer class="mt-5 px-8 pt-4 pb-6 text-[#636c77] text-center text-[0.92rem] max-sm:px-4">
+    <p>Iron Pulse Gym Dashboard - Actualizado en tiempo real</p>
+  </footer>
+</body>
+</html>
